@@ -311,6 +311,11 @@ export class WebcamComponent implements AfterViewInit, OnDestroy {
    */
   private initWebcam(deviceId: string, userVideoTrackConstraints: MediaTrackConstraints) {
     const _video = this.nativeVideoElement;
+    
+    video.setAttribute('autoplay', '');
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
       // merge deviceId -> userVideoTrackConstraints
